@@ -19,4 +19,10 @@ public class Supplier extends Delivery
     {
     return countryNumber;
     }
+
+    @Override
+    public void setExpectedDeliveryDate(String date) {
+        this.date = date;
+
+    }
 }

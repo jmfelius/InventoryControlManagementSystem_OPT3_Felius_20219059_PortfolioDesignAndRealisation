@@ -21,6 +21,19 @@ public class TransportCie extends Delivery implements DaysCalculation
         super.nameTransportCie = nameTransportCie;
     }
 
+    @Override
+    public void setExpectedDeliveryDate(String date)
+    {
+        if (express(countryNumberSupplier, expressDelivery, nameTransportCie))
+        {
+            super.finalDeliveryDate = (addDaysToDate(super.orderDate,1));
+        }
+        else
+        {
+            super.finalDeliveryDate = (addDaysToDate(super.orderDate, 3));
+        }
+    }
+
     /**
      * Method to determine standard delivery times based on standard Boolean countrySupplier number 1 through 10 or 11 and higher,
      * Boolean expressDelivery and Boolean PostNL (number||express)&PostNL

@@ -4,11 +4,11 @@ import java.util.Scanner;
  * In this class an order is processed by inputting dates of reception of order by supplier/transportcie,
  * updates of dates and actual delivery dates
  */
-public  class Delivery implements DaysCalculation
+public abstract class Delivery implements DaysCalculation
 {
 
     protected String orderDate;
-    private String date;
+    protected String date;
     protected String finalDeliveryDate;
     protected Integer countryNumberSupplier;
     protected String nameTransportCie;
@@ -42,10 +42,7 @@ public  class Delivery implements DaysCalculation
      * Based on input supplier/transportcie expected date is established;
      * this method remains empty in this class; is being implemented in subclasses.
      */
-    public void setExpectedDeliveryDate (String date)
-    {
-        this.date = date;
-    }
+    public abstract void setExpectedDeliveryDate (String date);
 
     /**
      * Based on updated info of supplier/transportcie a new expected deliverydate is established
@@ -109,6 +106,6 @@ public  class Delivery implements DaysCalculation
      */
     public long getActualDeliveryTime()
     {
-        return getDifferenceDays(orderDate,getActualDeliveryDate());
+        return getDifferenceDays(orderDate,getExpectedDeliveryDate());
     }
 }

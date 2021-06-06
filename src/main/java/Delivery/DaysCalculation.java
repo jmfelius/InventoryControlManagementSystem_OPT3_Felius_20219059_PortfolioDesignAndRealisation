@@ -35,7 +35,6 @@ public interface DaysCalculation {
      */
     default String addDaysToDate (String orderDate, int transportDays)
     {
-        String oldDate = orderDate;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar c = Calendar.getInstance();
         try{

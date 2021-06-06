@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/DaysCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/DaysCalculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

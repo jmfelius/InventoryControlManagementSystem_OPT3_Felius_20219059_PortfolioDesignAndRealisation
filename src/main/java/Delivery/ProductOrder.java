@@ -2,7 +2,8 @@ package Delivery;
 
 import Data.Customer;
 import Data.Product;
-import Delivery.Delivery;
+import Data.SupplierCompany;
+import Data.TransportCompany;
 
 import java.util.ArrayList;
 
@@ -18,16 +19,16 @@ public class ProductOrder {
      * a constructor is built with arrayList and Delivery.ProductOrder parameters
      */
     public ProductOrder(Customer customer, Product product, String orderDate, String deliveryDateSupplier,
-                        int countryNumber, String nameTransportCie, boolean expressDelivery) {
+                        SupplierCompany supplierCompany, TransportCompany transportCompany, boolean expressDelivery) {
 
         this.deliveries = new ArrayList<>();
 
-        Delivery supplier = new Supplier(orderDate,countryNumber);
+        Delivery supplier = new Supplier(orderDate, supplierCompany.getCountryNumber());
         supplier.setExpectedDeliveryDate(deliveryDateSupplier);
-        Delivery transportCie = new TransportCie(supplier.getExpectedDeliveryDate(),supplier.countryNumberSupplier,nameTransportCie, expressDelivery);
+        Delivery transport = new Transport (supplier.getExpectedDeliveryDate(), supplierCompany.getCountryNumber(), transportCompany.getName(), expressDelivery);
 
         deliveries.add(supplier);
-        deliveries.add(transportCie);
+        deliveries.add(transport);
     }
 
     public int getTotalActualDeliveryTime() {

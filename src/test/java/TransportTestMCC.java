@@ -1,10 +1,10 @@
-import Delivery.TransportCie;
+import Delivery.Transport;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class TransportCieTestMCC
+public class TransportTestMCC
 {
     /**
      * Method to determine standard delivery times based on standard Boolean countrySupplier number 1 through 10 or 11 and higher,
@@ -24,19 +24,19 @@ public class TransportCieTestMCC
 
     @Test
     public void express() {
-        TransportCie transportCie = new TransportCie("30-5-2021",  1,"PostNL", false);
+        Transport transport = new Transport("30-5-2021",  1,"PostNL", false);
 
-        assertFalse(transportCie.express(15, false, "DHL"));
-        assertFalse(transportCie.express(15, false, "PostNL" ));
+        assertFalse(transport.express(15, false, "DHL"));
+        assertFalse(transport.express(15, false, "PostNL" ));
 
-        assertFalse(transportCie.express(15, true, "DHL"));
-        assertTrue(transportCie.express(15, true, "PostNL" ));
+        assertFalse(transport.express(15, true, "DHL"));
+        assertTrue(transport.express(15, true, "PostNL" ));
 
-        assertFalse(transportCie.express(5, false, "DHL"));
-        assertTrue(transportCie.express(5, false, "PostNL" ));
+        assertFalse(transport.express(5, false, "DHL"));
+        assertTrue(transport.express(5, false, "PostNL" ));
 
-        assertFalse(transportCie.express(5, true, "DHL"));
-        assertTrue(transportCie.express(5, true, "PostNL" ));
+        assertFalse(transport.express(5, true, "DHL"));
+        assertTrue(transport.express(5, true, "PostNL" ));
     }
 
 

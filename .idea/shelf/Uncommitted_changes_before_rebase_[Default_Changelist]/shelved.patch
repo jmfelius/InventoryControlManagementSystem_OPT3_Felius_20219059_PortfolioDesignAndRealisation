@@ -1,0 +1,369 @@
+Index: src/main/java/Supplier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Supplier extends Delivery\n{\n    Integer countryNumber;\n\n\n    /**\n     * input of order details; country will be used in TransportCie class\n     *\n     * @param orderDate initial date of order\n     * @param countryNumber  country number  where supplier resides\n     */\n    public Supplier(String orderDate, Integer countryNumber)\n    {\n        super(orderDate);\n        this.countryNumber = countryNumber;\n    }\n\n    public Integer getCountry()\n    {\n    return countryNumber;\n    }\n\n    @Override\n    public void setExpectedDeliveryDate(String date) {\n        this.date = date;\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Supplier.java b/src/main/java/Supplier.java
+--- a/src/main/java/Supplier.java	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/src/main/java/Supplier.java	(date 1621963520187)
+@@ -11,7 +11,7 @@
+      */
+     public Supplier(String orderDate, Integer countryNumber)
+     {
+-        super(orderDate);
++        this.orderDate = orderDate;
+         this.countryNumber = countryNumber;
+     }
+ 
+Index: src/main/java/ProductOrder.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\n\npublic class ProductOrder\n{\n/**\n * ArrayList consisting of Supplier and TransportCie in order to establish\n * accumulated deliverytime (a productOrder requires Delivery)\n */\npublic ArrayList<Delivery> requires;\n\n/**\n * a constructor is built with arrayList and ProductOrder parameters\n */\npublic ProductOrder(Customer customer, Product product, String orderDate)\n{\n    this.requires = new ArrayList<>();\n    Supplier supplier = new Supplier(orderDate,1);\n    TransportCie transportCie = new TransportCie(supplier.getExpectedDeliveryDate(), supplier.countryNumberSupplier,\"PostNL\");\n    supplier.setExpectedDeliveryDate(\"30-5-2021\");\n    requires.add(supplier);\n    requires.add(transportCie);\n}\n\npublic int getTotalActualDeliveryTime()\n{   \n    int totalActualDeliveryTime = 0;\n    for (Delivery delivery : requires)\n    {\n         totalActualDeliveryTime =+ (int)delivery.getActualDeliveryTime();\n    }\n    return totalActualDeliveryTime;\n}\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ProductOrder.java b/src/main/java/ProductOrder.java
+--- a/src/main/java/ProductOrder.java	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/src/main/java/ProductOrder.java	(date 1621963715979)
+@@ -14,10 +14,14 @@
+ public ProductOrder(Customer customer, Product product, String orderDate)
+ {
+     this.requires = new ArrayList<>();
+-    Supplier supplier = new Supplier(orderDate,1);
+-    TransportCie transportCie = new TransportCie(supplier.getExpectedDeliveryDate(), supplier.countryNumberSupplier,"PostNL");
++    Delivery supplier = new Supplier(orderDate,1);
+     supplier.setExpectedDeliveryDate("30-5-2021");
++    System.out.println(supplier.getExpectedDeliveryDate());
++    Delivery transportCie = new TransportCie(supplier.getExpectedDeliveryDate(), supplier.countryNumberSupplier,"PostNL");
++    System.out.println("Dit is de expetcedDeliveryDate van supplier, maar orderDate van transportCie   " + transportCie.orderDate);
++    System.out.println("In productOrdr klasse: " + transportCie.getExpectedDeliveryDate());
+     requires.add(supplier);
++
+     requires.add(transportCie);
+ }
+ 
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\n\n    public static void main(String[] args) {\n\n        if (Login.getInstance().isAuthenticated()) {\n            Customer customer = new Customer();\n            Product product = new Product();\n            ProductOrder productOrder = new ProductOrder(customer,product,\"1-4-2021\");\n            System.out.println(\"de if functie in main wordt uitgevoerd; diverse methoden moeten nog worden geimplementeerd.\");\n            System.out.println(productOrder.getTotalActualDeliveryTime());\n\n            //TODO execute methods\n        }\n        Login.getInstance().resetLoggedInUser();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/src/main/java/Main.java	(date 1621935532882)
+@@ -6,7 +6,7 @@
+             Customer customer = new Customer();
+             Product product = new Product();
+             ProductOrder productOrder = new ProductOrder(customer,product,"1-4-2021");
+-            System.out.println("de if functie in main wordt uitgevoerd; diverse methoden moeten nog worden geimplementeerd.");
++            System.out.println("de if functie in class Main wordt uitgevoerd; diverse methoden moeten nog worden geimplementeerd.");
+             System.out.println(productOrder.getTotalActualDeliveryTime());
+ 
+             //TODO execute methods
+Index: src/main/java/TransportCie.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class TransportCie extends Delivery implements DaysCalculation\n{\n    private Boolean expressDelivery = false;\n    //private String date;\n    private String nameTransportCie;\n    //private String orderDate;\n    private Integer countryNumberSupplier;\n\n    /**\n     * input of order details\n     *\n     * @param orderDate for TransportCie is actualDeliveryDate of the supplier => starting date of the transport\n     * @param countryNumberSupplier residence of supplier\n     */\n    public TransportCie(String orderDate, Integer countryNumberSupplier, String nameTransportCie)\n    {\n        super(orderDate, countryNumberSupplier, nameTransportCie);\n\n        super.orderDate = orderDate;\n        super.countryNumberSupplier = countryNumberSupplier;\n        super.nameTransportCie = nameTransportCie;\n    }\n\n    @Override\n    public void setExpectedDeliveryDate(String date)\n    {\n        if (express(countryNumberSupplier, expressDelivery, nameTransportCie))\n        {\n            super.finalDeliveryDate = (addDaysToDate(super.orderDate,1));\n        }\n        else\n        {\n            super.finalDeliveryDate = (addDaysToDate(super.orderDate, 3));\n        }\n    }\n\n    /**\n     * Method to determine standard delivery times based on standard Boolean countrySupplier number 1 through 10 or 11 and higher,\n     * Boolean expressDelivery and Boolean PostNL (number||express)&PostNL\n     * NL | express| PostNL| result (1 day is 1, 3 days is 0)\n     * ____________________________________________\n     * 0  |   0    |    0  |   0\n     * 0      0         1      0\n     * 0      1         0      0\n     * 0      1         1      1\n     * 1      0         0      0\n     * 1      0         1      1\n     * 1      1         0      0\n     * 1      1         1      1\n     *\n     */\n\n    public void expressDelivery(Boolean expressDelivery)\n    {\n        this.expressDelivery = expressDelivery;\n    }\n\n    public Boolean express (Integer countryNumberSupplier, Boolean expressDelivery, String nameTransportCie)\n    {\n       return (((countryNumberSupplier >=1 & countryNumberSupplier <= 10) || (expressDelivery == true)) & nameTransportCie.equals(\"PostNL\"));\n    }\n\n    public void setActualDeliveryDate()\n    {\n        if (express(countryNumberSupplier, expressDelivery, nameTransportCie))\n        {\n            super.finalDeliveryDate = (addDaysToDate(super.orderDate,1));\n        }\n        else\n        {\n            super.finalDeliveryDate = (addDaysToDate(super.orderDate, 3));\n        }\n\n    }\n\n\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/TransportCie.java b/src/main/java/TransportCie.java
+--- a/src/main/java/TransportCie.java	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/src/main/java/TransportCie.java	(date 1621963715982)
+@@ -3,34 +3,38 @@
+     private Boolean expressDelivery = false;
+     //private String date;
+     private String nameTransportCie;
+-    //private String orderDate;
++    private String orderDate;
+     private Integer countryNumberSupplier;
+ 
+     /**
+      * input of order details
+      *
+      * @param orderDate for TransportCie is actualDeliveryDate of the supplier => starting date of the transport
++     *                  as defined in class ProductOrder
+      * @param countryNumberSupplier residence of supplier
+      */
+     public TransportCie(String orderDate, Integer countryNumberSupplier, String nameTransportCie)
+     {
+-        super(orderDate, countryNumberSupplier, nameTransportCie);
++        //super(orderDate,countryNumberSupplier,nameTransportCie);
++        this.orderDate = orderDate;
++        this.countryNumberSupplier = countryNumberSupplier;
++        this.nameTransportCie = nameTransportCie;
++    }
+ 
+-        super.orderDate = orderDate;
+-        super.countryNumberSupplier = countryNumberSupplier;
+-        super.nameTransportCie = nameTransportCie;
++    public void print(){
++        System.out.println("Dit is de expetcedDeliveryDate van supplier, maar orderDate van transportCie   " + orderDate);
+     }
+ 
+     @Override
+-    public void setExpectedDeliveryDate(String date)
++    public void setExpectedDeliveryDate(String orderDate)
+     {
+         if (express(countryNumberSupplier, expressDelivery, nameTransportCie))
+         {
+-            super.finalDeliveryDate = (addDaysToDate(super.orderDate,1));
++            this.date = (addDaysToDate(this.orderDate,1));
+         }
+         else
+         {
+-            super.finalDeliveryDate = (addDaysToDate(super.orderDate, 3));
++            this.date = (addDaysToDate(this.orderDate, 3));
+         }
+     }
+ 
+Index: src/main/java/Delivery.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\n\n/**\n * In this class an order is processed by inputting dates of reception of order by supplier/transportcie,\n * updates of dates and actual delivery dates\n */\npublic abstract class Delivery implements DaysCalculation\n{\n\n    protected String orderDate;\n    protected String date;\n    protected String finalDeliveryDate;\n    protected Integer countryNumberSupplier;\n    protected String nameTransportCie;\n    protected Integer productWeight;\n\n    /**\n     * input of order details\n     * @param orderDate initial date of order\n     */\n    public Delivery(String orderDate)\n    {\n        this.orderDate = orderDate;\n    }\n\n    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie)\n    {\n        this.orderDate = orderDate;\n        this.countryNumberSupplier = countryNumberSupplier;\n        this.nameTransportCie = nameTransportCie;\n    }\n\n    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Integer productWeight)\n    {\n        this.orderDate = orderDate;\n        this.countryNumberSupplier = countryNumberSupplier;\n        this.nameTransportCie = nameTransportCie;\n        this.productWeight = productWeight;\n    }\n\n    /**\n     * Based on input supplier/transportcie expected date is established;\n     * this method remains empty in this class; is being implemented in subclasses.\n     */\n    public abstract void setExpectedDeliveryDate (String date);\n\n    /**\n     * Based on updated info of supplier/transportcie a new expected deliverydate is established\n     * @param today date of today dd-MM-yyyy\n     */\n    public void updateExpectedDeliveryDate (String today)\n    {\n        int deltaDays = (int) getDifferenceDays(date, today );\n        if (deltaDays < 0)\n        {\n            Scanner newDate = new Scanner(System.in);\n            System.out.print(\"Please insert new expected delivery date (dd-MM-yyyy): \");\n            this.date = newDate.nextLine();\n        }\n        else\n        {\n            System.out.printf(\"Please be patient; still %d days before the expected delivery day lapses.\", deltaDays);\n        }\n    }\n\n\n    /**\n     * When the supplier/transportcie has delivered the order to the next chain (i.e.\n     * transportcie or customer respectively), the actual delivery date is inputted.\n     * @param date actual delivery date to transportcie or customer\n     */\n    public void setActualDeliveryDate (String date)\n    {\n        this.finalDeliveryDate = date;\n    }\n\n    /**\n     * returns actual date of delivery\n     * @return date of expected delivery to customer\n     */\n    public String getExpectedDeliveryDate()\n    {\n        try {\n            int deltaDays = (int) getDifferenceDays(date, finalDeliveryDate);\n            if (deltaDays < 0) {\n                return (\"The product has already been delivered on \" + finalDeliveryDate);\n            }\n        }\n        catch(Exception e){}\n        return date;\n    }\n\n    /**\n     * returns actual date of delivery to customer\n     * @return actual date of delivery to customer\n     */\n    public String getActualDeliveryDate()\n    {\n        return finalDeliveryDate;\n    }\n\n    /**\n     * Based on order date and actual deliverydate the time from order to\n     * delivery per logistical chain is returned\n     * @return int delivery time in days\n     */\n    public long getActualDeliveryTime()\n    {\n        return getDifferenceDays(orderDate,getExpectedDeliveryDate());\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Delivery.java b/src/main/java/Delivery.java
+--- a/src/main/java/Delivery.java	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/src/main/java/Delivery.java	(date 1621962664844)
+@@ -30,7 +30,7 @@
+         this.nameTransportCie = nameTransportCie;
+     }
+ 
+-    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Integer productWeight)
++    public Delivery()
+     {
+         this.orderDate = orderDate;
+         this.countryNumberSupplier = countryNumberSupplier;
+@@ -80,13 +80,14 @@
+      */
+     public String getExpectedDeliveryDate()
+     {
+-        try {
++        /*try {
+             int deltaDays = (int) getDifferenceDays(date, finalDeliveryDate);
+             if (deltaDays < 0) {
+                 return ("The product has already been delivered on " + finalDeliveryDate);
+             }
+         }
+-        catch(Exception e){}
++        catch(Exception e){}*/
++        System.out.println("expected deliverydate in method getExpectedDeleiveryDtae is: " + date);
+         return date;
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"b75ad563-5146-4296-89ce-b621f234ee85\" name=\"Default Changelist\" comment=\"login class fixed\">\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/ProductOrderTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Delivery.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Delivery.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/ProductOrder.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/ProductOrder.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Supplier.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Supplier.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/TransportCie.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/TransportCie.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/DeliveryTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/DeliveryTest.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n        <option value=\"JUnit4 Test Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Development\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"recentNewPullRequestHead\">\n      <RepoCoordinatesHolder>\n        <option name=\"owner\" value=\"jmfelius\" />\n        <option name=\"repository\" value=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      </RepoCoordinatesHolder>\n    </option>\n  </component>\n  <component name=\"JsBowerSettings\">\n    <bower-package value=\"\" />\n    <bower.json value=\"\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1sbtJL367rO43CLcqXR0Z08oafn\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\" value=\"JUnit4\" />\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4\" value=\"\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"AndroidSdkUpdater\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/test/java\" />\n      <recent name=\"$PROJECT_DIR$/src/main/java\" />\n    </key>\n    <key name=\"CreateTestDialog.Recents.Supers\">\n      <recent name=\"\" />\n    </key>\n    <key name=\"CreateTestDialog.RecentsKey\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Main\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"DeliveryTest.getActualDeliveryDate\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      <option name=\"PACKAGE_NAME\" value=\"\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"DeliveryTest\" />\n      <option name=\"METHOD_NAME\" value=\"getActualDeliveryDate\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"DeliveryTest.setActualDeliveryDate\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      <option name=\"PACKAGE_NAME\" value=\"\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"DeliveryTest\" />\n      <option name=\"METHOD_NAME\" value=\"setActualDeliveryDate\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"DeliveryTest.setExpectedDeliveryDate\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      <option name=\"PACKAGE_NAME\" value=\"\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"DeliveryTest\" />\n      <option name=\"METHOD_NAME\" value=\"setExpectedDeliveryDate\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"SupplierTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation\" />\n      <option name=\"PACKAGE_NAME\" value=\"\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"SupplierTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JUnit.SupplierTest\" />\n        <item itemvalue=\"JUnit.DeliveryTest.setExpectedDeliveryDate\" />\n        <item itemvalue=\"JUnit.DeliveryTest.setActualDeliveryDate\" />\n        <item itemvalue=\"JUnit.DeliveryTest.getActualDeliveryDate\" />\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"b75ad563-5146-4296-89ce-b621f234ee85\" name=\"Default Changelist\" comment=\"\" />\n      <created>1621153046696</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1621153046696</updated>\n      <workItem from=\"1621153048590\" duration=\"1148000\" />\n      <workItem from=\"1621454902610\" duration=\"6928000\" />\n      <workItem from=\"1621672388646\" duration=\"16814000\" />\n      <workItem from=\"1621930709476\" duration=\"1243000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"login class fixed\">\n      <created>1621882241860</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1621882241860</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/Development\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Login class added\" />\n    <MESSAGE value=\"login class fixed\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"login class fixed\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 98ed068d2c171db267ce1dfe085f9fcfac3ad0d2)
++++ b/.idea/workspace.xml	(date 1622906881160)
+@@ -4,15 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="login class fixed">
+-      <change afterPath="$PROJECT_DIR$/src/test/java/ProductOrderTest.java" afterDir="false" />
++    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="update for assessment">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProductOrder.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Supplier.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/TransportCie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TransportCie.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,7 +21,6 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Class" />
+-        <option value="JUnit4 Test Class" />
+       </list>
+     </option>
+   </component>
+@@ -34,14 +31,6 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="GithubPullRequestsUISettings">
+-    <option name="recentNewPullRequestHead">
+-      <RepoCoordinatesHolder>
+-        <option name="owner" value="jmfelius" />
+-        <option name="repository" value="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+-      </RepoCoordinatesHolder>
+-    </option>
+   </component>
+   <component name="JsBowerSettings">
+     <bower-package value="" />
+@@ -58,9 +47,7 @@
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+@@ -74,12 +61,6 @@
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src/test/java" />
+       <recent name="$PROJECT_DIR$/src/main/java" />
+-    </key>
+-    <key name="CreateTestDialog.Recents.Supers">
+-      <recent name="" />
+-    </key>
+-    <key name="CreateTestDialog.RecentsKey">
+-      <recent name="" />
+     </key>
+   </component>
+   <component name="RunManager" selected="Application.Main">
+@@ -90,52 +71,50 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="DeliveryTest.getActualDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="DeliveryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+       <option name="PACKAGE_NAME" value="" />
+       <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
+-      <option name="METHOD_NAME" value="getActualDeliveryDate" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="DeliveryTest.setActualDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="SupplierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
+-      <option name="METHOD_NAME" value="setActualDeliveryDate" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="SupplierTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="DeliveryTest.setExpectedDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="TransportCieTestMCC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
+-      <option name="METHOD_NAME" value="setExpectedDeliveryDate" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="SupplierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="TransportCieTestMCC.express" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="SupplierTest" />
+-      <option name="TEST_OBJECT" value="class" />
++      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
++      <option name="METHOD_NAME" value="express" />
++      <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.Main" />
+         <item itemvalue="JUnit.SupplierTest" />
+-        <item itemvalue="JUnit.DeliveryTest.setExpectedDeliveryDate" />
+-        <item itemvalue="JUnit.DeliveryTest.setActualDeliveryDate" />
+-        <item itemvalue="JUnit.DeliveryTest.getActualDeliveryDate" />
+-        <item itemvalue="Application.Main" />
++        <item itemvalue="JUnit.TransportCieTestMCC.express" />
++        <item itemvalue="JUnit.TransportCieTestMCC" />
++        <item itemvalue="JUnit.DeliveryTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -148,18 +127,10 @@
+       <option name="presentableId" value="Default" />
+       <updated>1621153046696</updated>
+       <workItem from="1621153048590" duration="1148000" />
+-      <workItem from="1621454902610" duration="6928000" />
+-      <workItem from="1621672388646" duration="16814000" />
+-      <workItem from="1621930709476" duration="1243000" />
++      <workItem from="1621449214170" duration="4711000" />
++      <workItem from="1622055752594" duration="600000" />
++      <workItem from="1622906477626" duration="115000" />
+     </task>
+-    <task id="LOCAL-00001" summary="login class fixed">
+-      <created>1621882241860</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1621882241860</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -170,28 +141,27 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="origin/Development" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="Login class added" />
+-    <MESSAGE value="login class fixed" />
+-    <option name="LAST_COMMIT_MESSAGE" value="login class fixed" />
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
++          <line>4</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/DaysCalculation.java</url>
++          <line>18</line>
++          <option name="timeStamp" value="2" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
+   </component>
+ </project>
+\ No newline at end of file

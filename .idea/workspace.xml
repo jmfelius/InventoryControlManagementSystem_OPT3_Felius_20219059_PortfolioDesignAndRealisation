@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="login class fixed">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ProductOrderTest.java" afterDir="false" />
+    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TransportCie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TransportCie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,14 +17,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Development" />
+        <entry key="$PROJECT_DIR$" value="template_pattern_for_delivery" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,11 +50,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -75,14 +68,21 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start.Main" />
+      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Start.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
@@ -90,32 +90,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeliveryTest.getActualDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
-      <option name="METHOD_NAME" value="getActualDeliveryDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeliveryTest.setActualDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
-      <option name="METHOD_NAME" value="setActualDeliveryDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeliveryTest.setExpectedDeliveryDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeliveryTest" />
-      <option name="METHOD_NAME" value="setExpectedDeliveryDate" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,13 +110,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TransportCieTestMCC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransportCieTestMCC.express" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
+      <option name="METHOD_NAME" value="express" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SupplierTest" />
-        <item itemvalue="JUnit.DeliveryTest.setExpectedDeliveryDate" />
-        <item itemvalue="JUnit.DeliveryTest.setActualDeliveryDate" />
-        <item itemvalue="JUnit.DeliveryTest.getActualDeliveryDate" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TransportCieTestMCC.express" />
+        <item itemvalue="JUnit.TransportCieTestMCC" />
+        <item itemvalue="JUnit.SupplierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -148,18 +148,28 @@
       <option name="presentableId" value="Default" />
       <updated>1621153046696</updated>
       <workItem from="1621153048590" duration="1148000" />
-      <workItem from="1621454902610" duration="6928000" />
-      <workItem from="1621672388646" duration="16814000" />
-      <workItem from="1621930709476" duration="1243000" />
+      <workItem from="1621449214170" duration="4711000" />
+      <workItem from="1622055752594" duration="600000" />
+      <workItem from="1622906477626" duration="115000" />
+      <workItem from="1622906809589" duration="2862000" />
+      <workItem from="1622913075584" duration="9447000" />
+      <workItem from="1622926938436" duration="19657000" />
     </task>
-    <task id="LOCAL-00001" summary="login class fixed">
-      <created>1621882241860</created>
+    <task id="LOCAL-00001" summary="Cleaned up all classes, inproved the main and made the model working!">
+      <created>1622986251867</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1621882241860</updated>
+      <updated>1622986251868</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleaned up all classes, inproved the main and made the model working!">
+      <created>1622986390884</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622986390884</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,19 +180,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Development" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -190,8 +188,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Login class added" />
-    <MESSAGE value="login class fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="login class fixed" />
+    <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up all classes, inproved the main and made the model working!" />
   </component>
 </project>

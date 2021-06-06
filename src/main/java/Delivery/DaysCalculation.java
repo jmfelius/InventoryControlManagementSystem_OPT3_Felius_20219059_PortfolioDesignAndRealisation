@@ -1,3 +1,5 @@
+package Delivery;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,18 +36,16 @@ public interface DaysCalculation {
     default String addDaysToDate (String orderDate, int transportDays)
     {
         String oldDate = orderDate;
-        //System.out.println("Date before Addition: "+oldDate);
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar c = Calendar.getInstance();
         try{
-            c.setTime(sdf.parse(oldDate));
+            c.setTime(sdf.parse(orderDate));
         }catch(ParseException e){
             e.printStackTrace();
         }
         //Incrementing the date by x days
         c.add(Calendar.DAY_OF_MONTH, transportDays);
         String newDate = sdf.format(c.getTime());
-        //System.out.println("Date Incremented : "+newDate);
         return newDate;
     }
 }

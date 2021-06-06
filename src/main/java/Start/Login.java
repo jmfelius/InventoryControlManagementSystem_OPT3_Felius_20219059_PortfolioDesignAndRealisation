@@ -1,11 +1,12 @@
-import java.util.ArrayList;
+package Start;
+
 import java.util.Scanner;
 
 /**
  *      The singleton pattern is used. Only one user (the Adminitrator is allowed access.
  *      Username and password are declared in Constructor
  *
- *      The method "...isAuthenticated" (......Login.getInstance().isAuthenticated();) can then be
+ *      The method "...isAuthenticated" (......Start.Login.getInstance().isAuthenticated();) can then be
  *      used throughout the other classes and
  *      make objects exclusively accessible to the authenticated user.
  *
@@ -52,11 +53,13 @@ public class Login {
      * @return
      */
     public boolean isAuthenticated() {
+
         if (userIsAuthenticated()) {
+
             return true;
         }
-        else
-        {
+        else {
+
             Scanner scanner = new Scanner(System.in);
 
             for (int i = 0; i < 3; i++) {

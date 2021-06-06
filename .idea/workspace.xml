@@ -4,30 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
+    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Minor clean up">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Data/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/TransportCie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TransportCieTestMCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransportTestMCC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="template_pattern_for_delivery" />
+        <entry key="$PROJECT_DIR$" value="data_interface" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -61,7 +78,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -110,19 +127,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransportCieTestMCC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransportTestMCC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
+      <option name="MAIN_CLASS_NAME" value="TransportTestMCC" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransportCieTestMCC.express" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransportTestMCC.express" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransportCieTestMCC" />
+      <option name="MAIN_CLASS_NAME" value="TransportTestMCC" />
       <option name="METHOD_NAME" value="express" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -133,8 +150,8 @@
       <list>
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TransportCieTestMCC.express" />
-        <item itemvalue="JUnit.TransportCieTestMCC" />
+        <item itemvalue="JUnit.TransportTestMCC.express" />
+        <item itemvalue="JUnit.TransportTestMCC" />
         <item itemvalue="JUnit.SupplierTest" />
       </list>
     </recent_temporary>
@@ -153,7 +170,7 @@
       <workItem from="1622906477626" duration="115000" />
       <workItem from="1622906809589" duration="2862000" />
       <workItem from="1622913075584" duration="9447000" />
-      <workItem from="1622926938436" duration="19657000" />
+      <workItem from="1622926938436" duration="26186000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned up all classes, inproved the main and made the model working!">
       <created>1622986251867</created>
@@ -169,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622986390884</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Minor clean up">
+      <created>1622987347402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622987347402</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +213,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up all classes, inproved the main and made the model working!" />
+    <MESSAGE value="Minor clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor clean up" />
   </component>
 </project>

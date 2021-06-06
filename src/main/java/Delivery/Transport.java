@@ -1,13 +1,13 @@
 package Delivery;
 
-public class TransportCie extends Delivery implements DaysCalculation {
+public class Transport extends Delivery implements DaysCalculation {
 
     private Boolean expressDelivery = false;
     private String nameTransportCie;
     private Integer countryNumberSupplier;
 
 
-    public TransportCie(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Boolean expressDelivery) {
+    public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Boolean expressDelivery) {
 
         super.orderDate = orderDate;
         this.countryNumberSupplier = countryNumberSupplier;

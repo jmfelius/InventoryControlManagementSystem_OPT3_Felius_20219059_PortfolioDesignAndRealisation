@@ -1,8 +1,3 @@
 package Data;
 
-public class Product
-{
-    /**
-     * To be implemented
-     */
-}
+public class Product extends Data{}

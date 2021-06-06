@@ -3,7 +3,8 @@ package Start;
 import Delivery.ProductOrder;
 import Data.Customer;
 import Data.Product;
-import Start.Login;
+import Data.SupplierCompany;
+import Data.TransportCompany;
 
 public class Main {
 
@@ -13,12 +14,18 @@ public class Main {
 
             String orderDate = "15-4-2021";
             String deliveryDateSupplier = "30-5-2021";
-            int countryNumber = 1;
-            String nameTransportCie = "DHL";
-            Boolean expressDelivery = false;
+            boolean expressDelivery = false;
             Customer customer = new Customer();
+            customer.setName("Jansen");
             Product product = new Product();
-            ProductOrder productOrder = new ProductOrder(customer, product, orderDate, deliveryDateSupplier, countryNumber, nameTransportCie, expressDelivery);
+            product.setName("Pegasus");
+            SupplierCompany supplierCompany = new SupplierCompany();
+            supplierCompany.setName("Nike");
+            supplierCompany.setCountryNumber(1);
+            TransportCompany transportCompany = new TransportCompany();
+            transportCompany.setName("DHL");
+            transportCompany.setCountryNumber(1);
+            ProductOrder productOrder = new ProductOrder(customer, product, orderDate, deliveryDateSupplier, supplierCompany, transportCompany, expressDelivery);
             System.out.println("The order date (orderDate) is: " + orderDate);
             System.out.println(("The expected delivery date (getExpectedDeliveryDate) is: " + productOrder.getExpectedDeliveryDate()));
             System.out.println("The total delivery time (getTotalActualDeliveryTime) is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");

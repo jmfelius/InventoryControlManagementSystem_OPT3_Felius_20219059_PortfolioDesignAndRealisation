@@ -4,7 +4,6 @@ import org.junit.Test;
 
 public class DeliveryTest {
 
-    //Delivery.Delivery delivery = new Delivery.Delivery("01-04-2021", 1,null);
     Supplier supplier = new Supplier("01-04-2021", 1);
 
     @Test

@@ -1,48 +1,31 @@
+package Delivery;
+
 import java.util.Scanner;
 
 /**
  * In this class an order is processed by inputting dates of reception of order by supplier/transportcie,
  * updates of dates and actual delivery dates
  */
-public abstract class Delivery implements DaysCalculation
-{
+public abstract class Delivery implements DaysCalculation {
 
     protected String orderDate;
     protected String date;
     protected String finalDeliveryDate;
     protected Integer countryNumberSupplier;
-    protected String nameTransportCie;
-    protected Integer productWeight;
+
 
     /**
-     * input of order details
-     * @param orderDate initial date of order
+     * Create empty constructor because of abstract class
      */
-    public Delivery(String orderDate)
-    {
-        this.orderDate = orderDate;
-    }
+    public Delivery() {}
 
-    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie)
-    {
-        this.orderDate = orderDate;
-        this.countryNumberSupplier = countryNumberSupplier;
-        this.nameTransportCie = nameTransportCie;
-    }
-
-    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Integer productWeight)
-    {
-        this.orderDate = orderDate;
-        this.countryNumberSupplier = countryNumberSupplier;
-        this.nameTransportCie = nameTransportCie;
-        this.productWeight = productWeight;
-    }
 
     /**
      * Based on input supplier/transportcie expected date is established;
      * this method remains empty in this class; is being implemented in subclasses.
      */
     public abstract void setExpectedDeliveryDate (String date);
+
 
     /**
      * Based on updated info of supplier/transportcie a new expected deliverydate is established
@@ -69,43 +52,48 @@ public abstract class Delivery implements DaysCalculation
      * transportcie or customer respectively), the actual delivery date is inputted.
      * @param date actual delivery date to transportcie or customer
      */
-    public void setActualDeliveryDate (String date)
-    {
+    public void setActualDeliveryDate (String date) {
+
         this.finalDeliveryDate = date;
     }
+
 
     /**
      * returns actual date of delivery
      * @return date of expected delivery to customer
      */
-    public String getExpectedDeliveryDate()
-    {
+    public String getExpectedDeliveryDate () {
+
         try {
-            int deltaDays = (int) getDifferenceDays(date, finalDeliveryDate);
+            int deltaDays = (int) getDifferenceDays (date, finalDeliveryDate);
             if (deltaDays < 0) {
                 return ("The product has already been delivered on " + finalDeliveryDate);
             }
         }
         catch(Exception e){}
+
         return date;
     }
+
 
     /**
      * returns actual date of delivery to customer
      * @return actual date of delivery to customer
      */
-    public String getActualDeliveryDate()
-    {
+    public String getActualDeliveryDate () {
+
         return finalDeliveryDate;
     }
+
 
     /**
      * Based on order date and actual deliverydate the time from order to
      * delivery per logistical chain is returned
      * @return int delivery time in days
      */
-    public long getActualDeliveryTime()
-    {
-        return getDifferenceDays(orderDate,getExpectedDeliveryDate());
+    public  long getActualDeliveryTime () {
+
+        return getDifferenceDays(orderDate, date);
     }
+
 }

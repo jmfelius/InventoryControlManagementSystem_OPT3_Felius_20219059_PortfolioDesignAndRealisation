@@ -1,3 +1,4 @@
+import Delivery.TransportCie;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -23,7 +24,7 @@ public class TransportCieTestMCC
 
     @Test
     public void express() {
-        TransportCie transportCie = new TransportCie("01-04-2021", 1, "PostNL");
+        TransportCie transportCie = new TransportCie("30-5-2021",  1,"PostNL", false);
 
         assertFalse(transportCie.express(15, false, "DHL"));
         assertFalse(transportCie.express(15, false, "PostNL" ));

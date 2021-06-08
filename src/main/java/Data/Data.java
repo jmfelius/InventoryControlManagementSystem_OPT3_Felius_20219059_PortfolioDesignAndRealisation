@@ -7,13 +7,13 @@ public class Data {
 
     public Data(){}
 
-    public String getName() {
-        return name;
-    }
+
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
     }
+
 
     public int getCountryNumber() {
         return countryNumber;

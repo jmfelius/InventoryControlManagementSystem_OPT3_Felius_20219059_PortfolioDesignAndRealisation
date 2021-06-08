@@ -1,30 +1,56 @@
 package Delivery;
 
+import Data.Customer;
+import Data.Product;
+import Data.SupplierCompany;
+import Data.TransportCompany;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * In this class an order is processed by inputting dates of reception of order by supplier/transportcie,
  * updates of dates and actual delivery dates
  */
-public abstract class Delivery implements DaysCalculation {
+public class Delivery implements DaysCalculation {
 
     protected String orderDate;
     protected String date;
     protected String finalDeliveryDate;
     protected Integer countryNumberSupplier;
-
+    public ArrayList<Delivery> deliveries;
 
     /**
-     * Create empty constructor because of abstract class
+     * a constructor is built with arrayList and various parameters
      */
-    public Delivery() {}
+    public Delivery(Customer customer, Product product, String orderDate, String deliveryDateSupplier,
+                        SupplierCompany supplierCompany, TransportCompany transportCompany, boolean expressDelivery) {
+
+        this.deliveries = new ArrayList<>();
+
+        Delivery supplier = new Supplier(orderDate, supplierCompany.getCountryNumber());
+        supplier.setExpectedDeliveryDate(deliveryDateSupplier);
+        Delivery transport = new Transport (supplier.getExpectedDeliveryDate(), supplierCompany.getCountryNumber(), transportCompany.getName(), expressDelivery);
+
+        deliveries.add(supplier);
+        deliveries.add(transport);
+    }
+
+    public Delivery(String orderDate, Integer countryNumber) {
+    }
+
+    public Delivery(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Boolean expressDelivery) {
+    }
 
 
     /**
      * Based on input supplier/transportcie expected date is established;
      * this method remains empty in this class; is being implemented in subclasses.
      */
-    public abstract void setExpectedDeliveryDate (String date);
+    public  void setExpectedDeliveryDate (String date){
+
+        this.date = date;
+    }
 
 
     /**

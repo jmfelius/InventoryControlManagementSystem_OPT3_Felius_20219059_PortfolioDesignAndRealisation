@@ -8,6 +8,7 @@ public class Transport extends Delivery implements DaysCalculation {
 
 
     public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Boolean expressDelivery) {
+        super(orderDate,countryNumberSupplier,nameTransportCie, expressDelivery);
 
         super.orderDate = orderDate;
         this.countryNumberSupplier = countryNumberSupplier;

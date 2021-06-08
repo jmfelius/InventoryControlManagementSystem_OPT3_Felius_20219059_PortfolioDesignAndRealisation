@@ -9,6 +9,7 @@ public class Supplier extends Delivery
      * @param countryNumber  country number  where supplier resides
      */
     public Supplier(String orderDate, Integer countryNumber) {
+        super(orderDate,countryNumber);
 
         this.orderDate = orderDate;
         super.countryNumberSupplier = countryNumber;

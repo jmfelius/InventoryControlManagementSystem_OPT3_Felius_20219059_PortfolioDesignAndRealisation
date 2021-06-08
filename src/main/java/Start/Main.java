@@ -1,5 +1,6 @@
 package Start;
 
+import Delivery.Delivery;
 import Delivery.ProductOrder;
 import Data.Customer;
 import Data.Product;
@@ -25,7 +26,7 @@ public class Main {
             TransportCompany transportCompany = new TransportCompany();
             transportCompany.setName("DHL");
             transportCompany.setCountryNumber(1);
-            ProductOrder productOrder = new ProductOrder(customer, product, orderDate, deliveryDateSupplier, supplierCompany, transportCompany, expressDelivery);
+            ProductOrder productOrder = new ProductOrder();
             System.out.println("The order date (orderDate) is: " + orderDate);
             System.out.println(("The expected delivery date (getExpectedDeliveryDate) is: " + productOrder.getExpectedDeliveryDate()));
             System.out.println("The total delivery time (getTotalActualDeliveryTime) is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");

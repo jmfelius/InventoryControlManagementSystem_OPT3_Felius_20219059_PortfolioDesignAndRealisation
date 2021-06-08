@@ -14,10 +14,6 @@ public class Supplier extends Delivery
         super.countryNumberSupplier = countryNumber;
     }
 
-    public Integer getCountry()
-    {
-    return countryNumberSupplier;
-    }
 
     @Override
     public void setExpectedDeliveryDate(String date) {

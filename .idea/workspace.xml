@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/DaysCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/DaysCalculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeliveryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="template_pattern_for_delivery" />
+        <entry key="$PROJECT_DIR$" value="Development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,5 +193,42 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
     <option name="LAST_COMMIT_MESSAGE" value="Cleaned up all classes, inproved the main and made the model working!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
+          <line>20</line>
+          <properties class="Delivery.Transport" method="setExpectedDeliveryDate">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Supplier.java</url>
+          <line>10</line>
+          <properties class="Delivery.Supplier" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Supplier.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

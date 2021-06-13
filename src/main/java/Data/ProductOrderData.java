@@ -1,19 +1,19 @@
 package Data;
 
-public class Data {
+public class ProductOrderData {
 
     String name;
     int countryNumber;
 
-    public Data(){}
+    public ProductOrderData(){}
 
-    public String getName() {
-        return name;
-    }
+
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
     }
+
 
     public int getCountryNumber() {
         return countryNumber;

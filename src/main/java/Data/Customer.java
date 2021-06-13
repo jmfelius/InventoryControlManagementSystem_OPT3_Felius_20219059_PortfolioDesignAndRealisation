@@ -1,3 +1,3 @@
 package Data;
 
-public class Customer extends Data {}
+public class Customer extends ProductOrderData {}

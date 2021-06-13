@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Delivery/DateToday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/ProductOrderData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -183,7 +191,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/moving_ArrayList_to_Delivery_class" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -193,42 +213,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
     <option name="LAST_COMMIT_MESSAGE" value="Cleaned up all classes, inproved the main and made the model working!" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
-          <line>20</line>
-          <properties class="Delivery.Transport" method="setExpectedDeliveryDate">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Supplier.java</url>
-          <line>10</line>
-          <properties class="Delivery.Supplier" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Delivery/Supplier.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,11 +1,11 @@
 package Data;
 
-public class Data {
+public class ProductOrderData {
 
     String name;
     int countryNumber;
 
-    public Data(){}
+    public ProductOrderData(){}
 
 
     public String getName() { return name; }

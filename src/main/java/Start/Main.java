@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if (Login.getInstance().isAuthenticated()) {
+        while (Login.getInstance().isAuthenticated()) {
 
             Scanner scanner = new Scanner(System.in);
 
@@ -31,16 +31,16 @@ public class Main {
             product.setName("Pegasus");
             TransportCompany transportCompany = new TransportCompany();
             System.out.println("please insert name transportcie: ");
-            scanner.nextLine();
-            String naam = scanner.nextLine();
-            //String naam = "PostNL";
+            //scanner.nextLine();
+            //String naam = scanner.nextLine();
+            String naam = "PostNL";
             transportCompany.setName(naam);
             transportCompany.setCountryNumber(1);
             SupplierCompany supplierCompany = new SupplierCompany();
             System.out.println("please insert name supplier: ");
-            String naam1 = scanner.nextLine();
-            supplierCompany.setName(naam1);
-            //String naam = "Nike";
+            //String naam1 = scanner.nextLine();
+            //supplierCompany.setName(naam1);
+            String naam1 = "Nike";
             System.out.println("Please insert country number supplier: ");
             int number = scanner.nextInt();
             supplierCompany.setCountryNumber(number);
@@ -50,8 +50,14 @@ public class Main {
             System.out.println("The order date (orderDate) is: " + orderDate);
             System.out.println(("The expected delivery date (getExpectedDeliveryDate) is: " + productOrder.getExpectedDeliveryDate()));
             System.out.println("The total delivery time (getTotalActualDeliveryTime) is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");
-
+            System.out.println("Do you wish to continue y/n?");
+            String yesno = scanner.nextLine();
+            scanner.nextLine();
+            if (!yesno.equalsIgnoreCase("y")) {
+                Login.getInstance().resetLoggedInUser();
+            }
         }
-        Login.getInstance().resetLoggedInUser();
+
     }
 }
+

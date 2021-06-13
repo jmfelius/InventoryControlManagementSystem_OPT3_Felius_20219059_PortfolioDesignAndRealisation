@@ -29,11 +29,10 @@ public abstract class Delivery implements DaysCalculation {
 
     /**
      * Based on updated info of supplier/transportcie a new expected deliverydate is established
-     * @param today date of today dd-MM-yyyy
      */
-    public void updateExpectedDeliveryDate (String today)
+    public void updateExpectedDeliveryDate ()
     {
-        int deltaDays = (int) getDifferenceDays(date, today );
+        int deltaDays = (int) getDifferenceDays(date, DateToday.dateToday() );
         if (deltaDays < 0)
         {
             Scanner newDate = new Scanner(System.in);

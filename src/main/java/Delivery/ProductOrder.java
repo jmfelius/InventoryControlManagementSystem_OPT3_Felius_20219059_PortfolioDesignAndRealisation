@@ -15,6 +15,13 @@ public class ProductOrder {
      */
     public ArrayList<Delivery> deliveries;
 
+    private int getSize() {
+        return deliveries.size();
+    }
+
+
+
+
     /**
      * a constructor is built with arrayList and Delivery.ProductOrder parameters
      */
@@ -43,11 +50,7 @@ public class ProductOrder {
 
     public String getExpectedDeliveryDate() {
 
-        String expectedDeliveryDate = "";
-
-        for (Delivery delivery : deliveries){
-            expectedDeliveryDate += " " + delivery.getExpectedDeliveryDate();
-        }
+        String expectedDeliveryDate = deliveries.get(getSize()-1).getExpectedDeliveryDate();
 
         return expectedDeliveryDate;
     }

@@ -24,7 +24,7 @@ public class TransportTestMCC
 
     @Test
     public void express() {
-        Transport transport = new Transport("30-5-2021",  1,"PostNL", false);
+        Transport transport = new Transport("30-5-2021",  1,"PostNL");
 
         assertFalse(transport.express(15, false, "DHL"));
         assertFalse(transport.express(15, false, "PostNL" ));

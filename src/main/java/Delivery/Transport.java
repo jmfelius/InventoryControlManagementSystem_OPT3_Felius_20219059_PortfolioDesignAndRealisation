@@ -1,5 +1,7 @@
 package Delivery;
 
+import java.util.Scanner;
+
 public class Transport extends Delivery implements DaysCalculation {
 
     private Boolean expressDelivery = false;
@@ -7,18 +9,18 @@ public class Transport extends Delivery implements DaysCalculation {
     private Integer countryNumberSupplier;
 
 
-    public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie, Boolean expressDelivery) {
-
+    public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie){
         super.orderDate = orderDate;
         this.countryNumberSupplier = countryNumberSupplier;
         this.nameTransportCie = nameTransportCie;
-        this.expressDelivery = expressDelivery;
+
         setExpectedDeliveryDate(orderDate);
     }
 
 
     @Override
     public void setExpectedDeliveryDate(String orderDate) {
+
 
         if (express(countryNumberSupplier, expressDelivery, nameTransportCie)) {
             super.date = (addDaysToDate(super.orderDate,1));

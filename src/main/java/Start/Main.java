@@ -49,7 +49,7 @@ public class Main {
                 programmRunning = false;
 
             }
-            System.out.println("The programm terminates; thanks you.");
+            System.out.println("The programm terminates; thank you.");
             Login.getInstance().resetLoggedInUser();
         }
     }

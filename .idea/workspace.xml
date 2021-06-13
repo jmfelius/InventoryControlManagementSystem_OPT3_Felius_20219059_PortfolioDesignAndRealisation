@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="large parameter list reduced in class ProductOrder">
+    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Final commits for eindoplevering">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TransportTestMCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransportTestMCC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +69,16 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SupplierTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start.Main" />
       <module name="InventoryControlManagementSystem_OPT3_Felius_20219059_PortfolioDesignAndRealisation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Start.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.SupplierTest" />
         <item itemvalue="JUnit.TransportCieTestMCC.express" />
         <item itemvalue="JUnit.TransportCieTestMCC" />
         <item itemvalue="JUnit.DeliveryTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +178,28 @@
       <option name="project" value="LOCAL" />
       <updated>1623616571307</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Final commits for eindoplevering">
+      <created>1623622415677</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623622415677</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Final commits for eindoplevering">
+      <created>1623622422643</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623622422643</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Final commits for eindoplevering">
+      <created>1623622457817</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623622457817</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +232,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
     <MESSAGE value="large parameter list reduced in class ProductOrder" />
-    <option name="LAST_COMMIT_MESSAGE" value="large parameter list reduced in class ProductOrder" />
+    <MESSAGE value="Final commits for eindoplevering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commits for eindoplevering" />
   </component>
 </project>

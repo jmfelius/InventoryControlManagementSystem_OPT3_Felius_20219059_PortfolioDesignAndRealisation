@@ -25,7 +25,7 @@ public class ProductOrder {
     /**
      * a constructor is built with arrayList and Delivery.ProductOrder parameters
      */
-    public ProductOrder(Customer customer, Product product, String orderDate, String deliveryDateSupplier,
+    public ProductOrder(String orderDate, String deliveryDateSupplier,
                         SupplierCompany supplierCompany, TransportCompany transportCompany, boolean expressDelivery) {
 
         this.deliveries = new ArrayList<>();

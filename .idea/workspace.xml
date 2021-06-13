@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Cleaned up all classes, inproved the main and made the model working!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Delivery/DateToday.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/ProductOrderData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Delivery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
     </list>

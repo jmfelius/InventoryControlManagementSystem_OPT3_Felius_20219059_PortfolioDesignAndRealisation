@@ -17,9 +17,15 @@ public class Main {
 
                 Scanner scanner = new Scanner(System.in);
 
-                Product asicsKayano25 = new Product();
+                Customer customer1 = new Customer();
+                System.out.println("Please insert customer name");
+                customer1.setName(scanner.nextLine());
+                Product product1 = new Product();
+                System.out.println("Please insert product name: ");
+                product1.setName(scanner.nextLine()) ;
 
-                ProductOrderData orderData = new ProductOrderData();
+                ProductOrderData orderData = new ProductOrderData(product1, customer1);
+
                 System.out.println("Please insert order date (dd-mm-yyyy): ");
                 String orderDate = scanner.nextLine();
                 System.out.println("Please insert expected delivery date supplier  (dd-mm-yyyy): ");
@@ -40,8 +46,8 @@ public class Main {
 
                 ProductOrder productOrder = new ProductOrder(orderDate, deliveryDateSupplier, supplierCompany, transportCompany, orderData);
                 System.out.println("The order date (orderDate) is: " + orderDate);
-                System.out.println(("The expected delivery date (getExpectedDeliveryDate) is: " + productOrder.getExpectedDeliveryDate()));
-                System.out.println("The total delivery time (getTotalActualDeliveryTime) is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");
+                System.out.printf("The expected delivery date of %s ordered by %s is: %s \n", product1.getName(), customer1.getName(), productOrder.getExpectedDeliveryDate());
+                System.out.println("The total delivery time is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");
                 System.out.println("Do you wish to continue y/n?");
                 String yesno = scanner.nextLine();
                 programmRunning = yesno.equals("y");

@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Final commits for eindoplevering">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2021,_10_14_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2021__10_14__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" beforeDir="false" />
+    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="While in Main loop bug removed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Data/ProductOrderDataParent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/ProductOrderData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/ProductOrderData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SupplierCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/TransportCompany.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -179,7 +176,7 @@
       <workItem from="1623665559875" duration="222000" />
       <workItem from="1624541932379" duration="167000" />
       <workItem from="1624626202064" duration="6821000" />
-      <workItem from="1624687614066" duration="495000" />
+      <workItem from="1624687614066" duration="4055000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned up all classes, inproved the main and made the model working!">
       <created>1622986251867</created>
@@ -230,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623622568630</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="While in Main loop bug removed">
+      <created>1624688499027</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624688499027</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,17 +268,7 @@
     <MESSAGE value="Cleaned up all classes, inproved the main and made the model working!" />
     <MESSAGE value="large parameter list reduced in class ProductOrder" />
     <MESSAGE value="Final commits for eindoplevering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final commits for eindoplevering" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Start/Main.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="While in Main loop bug removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="While in Main loop bug removed" />
   </component>
 </project>

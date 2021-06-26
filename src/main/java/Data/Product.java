@@ -1,3 +1,3 @@
 package Data;
 
-public class Product extends ProductOrderData {}
+public class Product extends ProductOrderDataParent {}

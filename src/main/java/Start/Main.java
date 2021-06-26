@@ -1,10 +1,7 @@
 package Start;
 
+import Data.*;
 import Delivery.ProductOrder;
-import Data.Customer;
-import Data.Product;
-import Data.SupplierCompany;
-import Data.TransportCompany;
 import Delivery.Transport;
 
 import java.util.Scanner;
@@ -12,13 +9,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Boolean programmRunning = true;
+        boolean programmRunning = true;
+
         if (Login.getInstance().isAuthenticated()) {
 
             while (programmRunning) {
 
                 Scanner scanner = new Scanner(System.in);
 
+                Product asicsKayano25 = new Product();
+
+                ProductOrderData orderData = new ProductOrderData();
                 System.out.println("Please insert order date (dd-mm-yyyy): ");
                 String orderDate = scanner.nextLine();
                 System.out.println("Please insert expected delivery date supplier  (dd-mm-yyyy): ");
@@ -34,20 +35,16 @@ public class Main {
                 SupplierCompany supplierCompany = new SupplierCompany();
                 System.out.println("Please insert country number supplier: ");
                 int number = scanner.nextInt();
+                scanner.nextLine();
                 supplierCompany.setCountryNumber(number);
 
-                ProductOrder productOrder = new ProductOrder(orderDate, deliveryDateSupplier, supplierCompany, transportCompany);
+                ProductOrder productOrder = new ProductOrder(orderDate, deliveryDateSupplier, supplierCompany, transportCompany, orderData);
                 System.out.println("The order date (orderDate) is: " + orderDate);
                 System.out.println(("The expected delivery date (getExpectedDeliveryDate) is: " + productOrder.getExpectedDeliveryDate()));
                 System.out.println("The total delivery time (getTotalActualDeliveryTime) is: " + productOrder.getTotalActualDeliveryTime() + " dagen.");
                 System.out.println("Do you wish to continue y/n?");
                 String yesno = scanner.nextLine();
-                scanner.nextLine();
-                if (yesno.equalsIgnoreCase("y")) {
-                    continue;
-                }
-                programmRunning = false;
-
+                programmRunning = yesno.equals("y");
             }
             System.out.println("The programm terminates; thank you.");
             Login.getInstance().resetLoggedInUser();

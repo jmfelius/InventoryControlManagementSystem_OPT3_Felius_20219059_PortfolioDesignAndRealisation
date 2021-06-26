@@ -1,5 +1,6 @@
 package Delivery;
 
+import Data.ProductOrderData;
 import Data.SupplierCompany;
 import Data.TransportCompany;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class ProductOrder {
      * a constructor is built with arrayList and Delivery.ProductOrder parameters
      */
     public ProductOrder(String orderDate, String deliveryDateSupplier,
-                        SupplierCompany supplierCompany, TransportCompany transportCompany) {
+                        SupplierCompany supplierCompany, TransportCompany transportCompany, ProductOrderData productOrderData) {
 
         this.deliveries = new ArrayList<>();
 

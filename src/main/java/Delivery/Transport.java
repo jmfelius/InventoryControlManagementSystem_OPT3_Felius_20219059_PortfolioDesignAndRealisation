@@ -32,17 +32,17 @@ public class Transport extends Delivery implements DaysCalculation {
 
 
     /**
-     * Method to determine standard delivery times based on standard Boolean countrySupplier number 1 through 10 or 11 and higher,
+     * Method to determine standard delivery times based on standard Boolean countrySupplier number 1 or 2 and higher,
      * Boolean expressDelivery and Boolean PostNL (number||express)&PostNL
      * NL | express| PostNL| result (1 day is 1, 3 days is 0)
      * ____________________________________________
      * 0  |   0    |    0  |   0
      * 0      0         1      0
-     * 0      1         0      0
+     * 0      1         0      1
      * 0      1         1      1
      * 1      0         0      0
      * 1      0         1      1
-     * 1      1         0      0
+     * 1      1         0      1
      * 1      1         1      1
      *
      */
@@ -50,6 +50,6 @@ public class Transport extends Delivery implements DaysCalculation {
 
     public Boolean express (Integer countryNumberSupplier, Boolean expressDelivery, String nameTransportCie) {
 
-       return (((countryNumberSupplier >=1 & countryNumberSupplier <= 10) || (expressDelivery)) & nameTransportCie.equals("PostNL"));
+       return (((countryNumberSupplier == 1 && nameTransportCie.equals("PostNL") ) || (expressDelivery)) );
     }
 }

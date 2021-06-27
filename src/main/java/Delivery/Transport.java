@@ -4,15 +4,16 @@ import java.util.Scanner;
 
 public class Transport extends Delivery implements DaysCalculation {
 
-    private Boolean expressDelivery = false;
+    private Boolean expressDelivery;
     private String nameTransportCie;
     private Integer countryNumberSupplier;
 
 
-    public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie){
+    public Transport(String orderDate, Integer countryNumberSupplier, String nameTransportCie, boolean expressDelivery){
         super.orderDate = orderDate;
         this.countryNumberSupplier = countryNumberSupplier;
         this.nameTransportCie = nameTransportCie;
+        this.expressDelivery = expressDelivery;
 
         setExpectedDeliveryDate(orderDate);
     }

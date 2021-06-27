@@ -24,18 +24,18 @@ public class TransportTestMCC
 
     @Test
     public void express() {
-        Transport transport = new Transport("30-5-2021",  1,"PostNL");
+        Transport transport = new Transport("30-5-2021",  1,"PostNL",true);
 
         assertFalse(transport.express(15, false, "DHL"));
         assertFalse(transport.express(15, false, "PostNL" ));
 
-        assertFalse(transport.express(15, true, "DHL"));
+        assertTrue(transport.express(15, true, "DHL"));
         assertTrue(transport.express(15, true, "PostNL" ));
 
         assertFalse(transport.express(5, false, "DHL"));
-        assertTrue(transport.express(5, false, "PostNL" ));
+        assertFalse(transport.express(5, false, "PostNL" ));
 
-        assertFalse(transport.express(5, true, "DHL"));
+        assertTrue(transport.express(5, true, "DHL"));
         assertTrue(transport.express(5, true, "PostNL" ));
     }
 

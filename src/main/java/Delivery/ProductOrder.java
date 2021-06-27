@@ -1,8 +1,7 @@
 package Delivery;
 
-import Data.ProductOrderData;
-import Data.SupplierCompany;
-import Data.TransportCompany;
+import Data.*;
+
 import java.util.ArrayList;
 public class ProductOrder {
 
@@ -11,10 +10,13 @@ public class ProductOrder {
      * accumulated deliverytime (a productOrder requires Delivery.Delivery)
      */
     public ArrayList<Delivery> deliveries;
-    Boolean express;
-    private int getSize() {
-        return deliveries.size();
-    }
+    private Boolean express;
+    private SupplierCompany supplierCompany;
+    private TransportCompany transportCompany;
+    private Product product;
+    private Customer customer;
+    private String orderDate;
+    private String deliveryDateSupplier;
 
 
 
@@ -22,17 +24,43 @@ public class ProductOrder {
     /**
      * a constructor is built with arrayList and Delivery.ProductOrder parameters
      */
-    public ProductOrder(String orderDate, String deliveryDateSupplier,
-                        SupplierCompany supplierCompany, TransportCompany transportCompany, ProductOrderData productOrderData) {
+    public ProductOrder(String orderDate, String deliveryDateSupplier, boolean expressDelivery) {
 
+        supplierCompany = new SupplierCompany();
+        transportCompany = new TransportCompany();
+        product = new Product();
+        customer = new Customer();
+        this.orderDate = orderDate;
+        this.deliveryDateSupplier = deliveryDateSupplier;
+        this.express = expressDelivery;
         this.deliveries = new ArrayList<>();
+    }
+
+    public void setArayListDeliveries(){
 
         Delivery supplier = new Supplier(orderDate, supplierCompany.getCountryNumber());
         supplier.setExpectedDeliveryDate(deliveryDateSupplier);
-        Delivery transport = new Transport (supplier.getExpectedDeliveryDate(), supplierCompany.getCountryNumber(), transportCompany.getName());
+        Delivery transport = new Transport (supplier.getExpectedDeliveryDate(), supplierCompany.getCountryNumber(), transportCompany.getName(),express);
 
         deliveries.add(supplier);
         deliveries.add(transport);
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public TransportCompany getTransportCompany() {
+        return transportCompany;
+    }
+
+
+    public SupplierCompany getSupplierCompany() {
+        return supplierCompany;
     }
 
     public int getTotalActualDeliveryTime() {
@@ -47,10 +75,11 @@ public class ProductOrder {
 
     public String getExpectedDeliveryDate() {
 
-        String expectedDeliveryDate = deliveries.get(getSize()-1).getExpectedDeliveryDate();
-
-        return expectedDeliveryDate;
+        return deliveries.get(getSize()-1).getExpectedDeliveryDate();
     }
 
+    private int getSize() {
+        return deliveries.size();
+    }
 
 }

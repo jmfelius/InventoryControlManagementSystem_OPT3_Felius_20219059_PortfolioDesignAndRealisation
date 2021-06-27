@@ -1,16 +1,10 @@
 package Data;
 
 public class ProductOrderData {
-
     String name;
     int countryNumber;
-    Customer customer;
-    Product product;
 
-    public ProductOrderData(Product product, Customer customer){
-        this.customer = customer;
-        this.product = product;
-    }
+    public ProductOrderData(){ }
 
     public String getName() { return name; }
 
@@ -27,3 +21,4 @@ public class ProductOrderData {
         this.countryNumber = countryNumber;
     }
 }
+

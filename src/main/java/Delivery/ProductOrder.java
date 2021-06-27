@@ -15,8 +15,8 @@ public class ProductOrder {
     private TransportCompany transportCompany;
     private Product product;
     private Customer customer;
-    String orderDate;
-    String deliveryDateSupplier;
+    private String orderDate;
+    private String deliveryDateSupplier;
 
 
 
@@ -33,10 +33,7 @@ public class ProductOrder {
         this.orderDate = orderDate;
         this.deliveryDateSupplier = deliveryDateSupplier;
         this.express = expressDelivery;
-
         this.deliveries = new ArrayList<>();
-
-
     }
 
     public void setArayListDeliveries(){
@@ -61,16 +58,9 @@ public class ProductOrder {
         return transportCompany;
     }
 
-    public void setTransportCompany(TransportCompany transportCompany) {
-        this.transportCompany = transportCompany;
-    }
 
     public SupplierCompany getSupplierCompany() {
         return supplierCompany;
-    }
-
-    public void setSupplierCompany(SupplierCompany supplierCompany) {
-        this.supplierCompany = supplierCompany;
     }
 
     public int getTotalActualDeliveryTime() {

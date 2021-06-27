@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Minor updates">
+    <list default="true" id="b75ad563-5146-4296-89ce-b621f234ee85" name="Default Changelist" comment="Composition of ProductOrderData onto class ProductOrder; objects customer, product, supplierCompany en transportCompany are initiated in constructor">
+      <change afterPath="$PROJECT_DIR$/Docs/InventoryControlManagementSystem 27-6-2021.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/InventoryControlManagementSystem 27-6-2021.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/ProductOrderData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Delivery/Transport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TransportTestMCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TransportTestMCC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Development" />
+        <entry key="$PROJECT_DIR$" value="improvements" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,17 +91,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,6 +163,7 @@
       <workItem from="1624626202064" duration="6821000" />
       <workItem from="1624687614066" duration="4055000" />
       <workItem from="1624780562560" duration="7321000" />
+      <workItem from="1624789737737" duration="1096000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned up all classes, inproved the main and made the model working!">
       <created>1622986251867</created>
@@ -284,7 +272,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
           <line>11</line>
-          <properties class="Delivery.Transport" method="&lt;init&gt;">
+          <properties class="Delivery.Transport">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />

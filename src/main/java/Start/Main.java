@@ -34,6 +34,7 @@ public class Main {
 
                 System.out.println("please insert name transportcie: ");
                 productOrder.getTransportCompany().setName(scanner.nextLine());
+                scanner.nextLine();
                 productOrder.getTransportCompany().setCountryNumber(1);
                 System.out.println("Please insert country number supplier: ");
                 productOrder.getSupplierCompany().setCountryNumber(scanner.nextInt());

@@ -245,7 +245,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/moving_ArrayList_to_Delivery_class" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -272,7 +272,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Delivery/Transport.java</url>
           <line>11</line>
-          <properties class="Delivery.Transport">
+          <properties class="Delivery.Transport" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />
